@@ -39,8 +39,38 @@ class Obj1{
 }
 jd.register(new Obj1())
 var result = jd.dispatch({resource:"obj1",action:"action1",params:{}})
-t( "action1 of obj1 is here"==result)
+// console.log(result)
+t( "action1 of obj1 is here"==result.data)
 // console.log(result)
 jd.register(new Obj1())
 var result = jd.dispatch({resource:"obj1",action:"action2",params:{echo:1}})
-t(1==result.echo)
+t(1==result.data.echo)
+var Obj2 ={
+    name:"reco",
+    action(){
+        return 'obj2'
+    }
+}
+jd.register(Obj2)
+var r2 = jd.dispatch({resource:'reco',action:'action',params:{}})
+// console.log(r2)
+t(r2.data=='obj2')
+var r2 = jd.dispatch({resource:'reco',action:'noaction'})
+t(r2.error == 'no action named noaction')
+var Obj3 ={
+    name:"reco3",
+    action(params){
+        return params.name
+    }
+}
+jd.register(Obj3)
+var r2 = jd.dispatch({resource:'reco3',action:'action',params:{name:'reco'}})
+// console.log(r2)
+t(r2.data=='reco')
+var r2 = jd.dispatch({resource:'reco3',action:'action'})
+// console.log(r2)
+t(r2.error == "Cannot read properties of undefined (reading 'name')")
+var jd = require('../.')
+// console.log(jd)
+t(jd.register)
+t(jd.dispatch)
