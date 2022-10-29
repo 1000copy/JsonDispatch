@@ -18,6 +18,16 @@ function monitorfile(event1){
             console.log('filename not provided');
         }
     });
+    fs.watchFile('./1.js', function (event, filename) {
+        // console.log('event is: ' + event);
+        if (filename) {
+            // console.log('filename provided: ' ,filename);
+            // reload()
+            event1()
+        } else {
+            console.log('filename not provided');
+        }
+    });
 }
 function reload(){
     console.log('reload',Object.keys(require.cache))
@@ -32,7 +42,15 @@ function reload(){
     index.start()
 }
 function reload(){
-    delete require.cache[require.resolve('./index.js')];
+    for(var key in require.cache){
+        // console.log(key,require.cache[key])
+        if(!key.endsWith('autoload.js'))
+            delete require.cache[key];
+    }
+    // delete require.cache[require.resolve('./1.js')];
+    // delete require.cache[require.resolve('./index.js')];
+    // console.log(require.cache)
+    process.stdout.write('\033c');
     var i = require('./index.js')
     i.start()
 }

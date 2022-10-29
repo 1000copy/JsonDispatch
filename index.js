@@ -29,11 +29,6 @@ function start(){
     server.listen(port, hostname, () => {
         console.log(`Server running at http://${hostname}:${port}/`);
       });
-    
-    
-
-    
-   
     server.on('connection', (socket) => {
      sockets.add(socket);
 
@@ -50,5 +45,8 @@ function stop(){
     console.log('stop')
     server.close();
 }
+function start(){}
+function stop(){}
+console.log(require('./1.js'))
 module.exports.start = start
 module.exports.stop = stop
