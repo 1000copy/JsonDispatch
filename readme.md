@@ -1,17 +1,35 @@
+## Json Dispatcher
 
+可以把规定格式的json转换为对代码的调用。就像这样：
+
+        var jd = require('../lib/.')
+        var t = require("assert")
+        t(jd.register)
+        t(jd.dispatch)
+        class Obj1{
+            get name(){return 'obj1'}
+            action1(){
+                result = "action1 of obj1 is here"
+                // console.log(result)
+                return result;
+            }
+            action2(params){
+                return params;
+            }
+        }
+        jd.register(new Obj1())
+        var result = jd.dispatch({resource:"obj1",action:"action1",params:{}})
+        // console.log(result)
+        t( "action1 of obj1 is here"==result.data)
+
+
+## TODO
+
+self test lightweight case
 assert.deepequal is required
 
-你们用的什么方法？
-我们用的是敏捷方法。
-可是你们没做TDD啊
-是的，我们选择了一些我们认为的可以做的方法，像是每日站会
 
-我们用的是面对对象方法
-可是你们这里那里都没有封装
-其实我们用的是结构化方法
-可是你们没有结构啊
-我说的结构化，指的是我们没有用面向对象方法
-
+## 工作日志
 
 过往js代码的模块整理
 价值在于，之前是为了app开发，是急就章，现在希望独立为模块，作为自己下一步app开发的固定的知识基础和代码基础。
@@ -28,9 +46,13 @@ more test
 dispatch throw exception,params:{obj:"No register obj",}
 dispatch throw exception,params:{obj:"Person",method:"no method",}
 
-2. json作为数据库元数据
+## 更多场景
+
+1. json作为数据库元数据
 先只是生产DDL即可，容易测试。容易定接口。
-3. 使用json作为对象元数据
+2. 使用json作为对象元数据
+3. 使用json作为ui的对象元数据
 
-4. 使用json作为ui的对象元数据
+## License 
 
+(gpl3.0)[LICENSE]
