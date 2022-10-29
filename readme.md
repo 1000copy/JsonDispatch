@@ -1,3 +1,6 @@
+
+assert.deepequal is required
+
 你们用的什么方法？
 我们用的是敏捷方法。
 可是你们没做TDD啊
