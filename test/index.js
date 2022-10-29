@@ -74,3 +74,48 @@ var jd = require('../.')
 // console.log(jd)
 t(jd.register)
 t(jd.dispatch)
+t({a:1}!={a:1})
+function check(left,right,msg){
+  if(!deepEqual(left,right)){
+    if(msg)
+    console.log(msg)
+    console.trace(left,' not equal to ',right)
+    // console.log(right)
+    process.exit(1)
+  }
+}
+var deepEqual = function (x, y) {
+    if (x === y) {
+      return true;
+    }
+    else if ((typeof x == "object" && x != null) && (typeof y == "object" && y != null)) {
+      if (Object.keys(x).length != Object.keys(y).length)
+        return false;
+  
+      for (var prop in x) {
+        if (y.hasOwnProperty(prop))
+        {  
+          if (! deepEqual(x[prop], y[prop]))
+            return false;
+        }
+        else
+          return false;
+      }
+      
+      return true;
+    }
+    else 
+      return false;
+  }
+check(1,2)
+check({a:1},{a:1,b:2},'haha')
+// check({a:1},{a:1,b:2},'haha')
+check([1,2],[1,2],'hh')
+// t([1]===[1])
+var y = [1,2,3]
+console.log(Object.keys(y).length)
+console.log(typeof y)
+for(var p in y){
+    console.log(p)
+}
+console.log(Object.keys(y))

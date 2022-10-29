@@ -3,7 +3,8 @@
     "version": "1.0.2",
     "author": "1000copy@gmail.com",
     "scripts": {
-        "test": "node test/index.js"
+        "test": "node test/index.js",
+        "autoload":"node autoload.js"
       },
       "repository": {
         "type": "git",
