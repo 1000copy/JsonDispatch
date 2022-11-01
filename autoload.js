@@ -1,3 +1,7 @@
 var autoload = require('./lib/autoload.js')
 var path = require('path')
-autoload.run( path.resolve('./index.js'))
+autoload.run( {
+    entryfile:path.resolve('./index.js'),
+    clearscreen:true,
+    monitorroot:path.resolve('./'),
+})

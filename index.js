@@ -1,5 +1,5 @@
 console.log('stop')
-console.log('stop2')
+console.log('stop2d%')
 console.log('stsH1A')
 require('./test/index.js')
 require('./test/jdOldStyle.js')

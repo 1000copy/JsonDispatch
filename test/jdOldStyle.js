@@ -22,7 +22,7 @@
             action:"clear"        
         }
  */
-var jd = require('../lib/.')
+var jd = require('../lib')
 var t = require("assert")
 t(jd.register)
 t(jd.dispatch)
