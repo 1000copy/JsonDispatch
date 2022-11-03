@@ -7,6 +7,13 @@ socket.onmessage = function (e) {
     console.log('we have a message');
     console.log(e.data.toString());
     log.value += e.data.toString();
+    if(e.data.toString()=='reload'){
+        // location.reload();
+        fetch('/fetch.json')
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+        console.log('reload')
+    }
 };
 socket.onclose = function (e) {
     console.log('socket closed')
