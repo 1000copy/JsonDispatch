@@ -4,4 +4,6 @@ autoload.run( {
     entryfile:path.resolve('./index.js'),
     clearscreen:true,
     monitorroot:path.resolve('./'),
+    excludeStartsWith:['.git','node_modules'],
+    excludeEndsWith:['.md'],
 })

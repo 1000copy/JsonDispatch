@@ -3,16 +3,19 @@
     "version": "1.0.2",
     "author": "1000copy@gmail.com",
     "scripts": {
-        "test": "node autoload.js"        
-      },
-      "repository": {
+        "test": "node autoload.js"
+    },
+    "repository": {
         "type": "git",
         "url": "https://github.com/1000copy/jsondispatch.git"
-      },
-      "keywords": [],
-      "license": "gpl 3.0",
-      "bugs": {
+    },
+    "keywords": [],
+    "license": "gpl 3.0",
+    "bugs": {
         "url": "https://github.com/1000copy/jsondispatch/issues"
-      },
-      "homepage": "https://github.com/1000copy/jsondispatch"
-  }
+    },
+    "homepage": "https://github.com/1000copy/jsondispatch",
+    "dependencies": {
+        "checkerrorjs": "^1.0.1"
+    }
+}
