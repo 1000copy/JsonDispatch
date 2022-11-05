@@ -9,5 +9,5 @@ check([1],[1],'simple array')
 check([1,2,3],[1,2,3],'array')
 check([1,[2],3],[1,[2],3],'deep array')
 check(3,Object.keys(y).length,'len',true)//if trace:true then print stacktree
-check(1,2,'wd')
+check(1,1,'wd')
 

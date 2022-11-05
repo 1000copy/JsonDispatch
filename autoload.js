@@ -7,7 +7,7 @@ var f = {
 var path = require('path')
 autoload.run( {
     entryfile:path.resolve('./index.js'),
-    clearscreen:true,
+    clearscreen:false,
     monitorroot:path.resolve('./'),
     fexclude:f,
 })
