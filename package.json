@@ -16,6 +16,6 @@
     },
     "homepage": "https://github.com/1000copy/jsondispatch",
     "dependencies": {
-        "checkerrorjs": "^1.0.1"
+        "checkerrorjs": "^1.0.2"
     }
 }
