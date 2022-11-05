@@ -16,6 +16,7 @@
     },
     "homepage": "https://github.com/1000copy/jsondispatch",
     "dependencies": {
-        "checkerrorjs": "^1.0.2"
+        "checkerrorjs": "^1.0.2",
+        "matrixreloadjs": "^1.0.1"
     }
 }

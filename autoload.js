@@ -1,4 +1,4 @@
-var autoload = require('./lib/autoload.js')
+var autoload = require('matrixreloadjs')
 var f = {
     exclude:['node_modules','.git','.gitignore','LICENSE','autoload.js','readme.md'],
     excludeStartsWith:['.git','.gitignore'],
